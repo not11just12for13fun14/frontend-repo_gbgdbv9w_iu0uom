@@ -14,6 +14,11 @@ const Hero = () => {
               <pattern id="maze" width="48" height="48" patternUnits="userSpaceOnUse">
                 <path d="M0 24h24v24h24M24 0v24h24" stroke="#4cc9f0" strokeWidth="1" fill="none" opacity="0.35" />
               </pattern>
+              <linearGradient id="print" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#0ea5e9" />
+                <stop offset="50%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#0b3b7a" />
+              </linearGradient>
             </defs>
             <rect width="100%" height="100%" fill="url(#maze)" />
           </svg>
@@ -61,27 +66,60 @@ const Hero = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative">
               <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-cyan-500/20 via-amber-400/10 to-sky-500/10 blur-2xl" />
               <div className="relative rounded-3xl border border-cyan-400/20 bg-white/5 backdrop-blur-xl p-6">
-                {/* boat bow wireframe */}
-                <svg viewBox="0 0 600 400" className="w-full h-auto">
+                {/* realistic speedboat hull being 3D printed */}
+                <svg viewBox="0 0 800 460" className="w-full h-auto">
                   <defs>
-                    <linearGradient id="mesh" x1="0" y1="0" x2="1" y2="1">
+                    <linearGradient id="hull" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stopColor="#67e8f9" />
                       <stop offset="100%" stopColor="#22d3ee" />
                     </linearGradient>
+                    <linearGradient id="nozzle" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#f59e0b" />
+                      <stop offset="100%" stopColor="#ef4444" />
+                    </linearGradient>
+                    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
                   </defs>
-                  <g fill="none" stroke="url(#mesh)" strokeWidth="1">
-                    {Array.from({ length: 14 }).map((_, i) => (
-                      <path key={i} d={`M ${40+i*36} 360 Q 300 ${60 + i*16} 560 360`} opacity={(i+5)/28} />
-                    ))}
+                  {/* build plate */}
+                  <rect x="40" y="380" width="720" height="28" rx="14" fill="#06182a" stroke="#164e63" strokeWidth="2" />
+                  {/* gantry */}
+                  <g stroke="#164e63" strokeWidth="3" opacity="0.9">
+                    <rect x="80" y="40" width="640" height="40" rx="8" fill="#0b1e33" />
+                    <rect x="90" y="60" width="620" height="6" fill="#164e63" />
+                    <rect x="740" y="40" width="12" height="340" fill="#0b1e33" />
+                    <rect x="80" y="40" width="12" height="340" fill="#0b1e33" />
+                  </g>
+                  {/* nozzle and filament */}
+                  <g filter="url(#softGlow)">
+                    <rect x="440" y="86" width="22" height="30" rx="4" fill="url(#nozzle)" />
+                    <path d="M451 116 L451 260" stroke="url(#nozzle)" strokeWidth="4" />
+                  </g>
+                  {/* hull outline - hard‑chine V hull */}
+                  <g fill="none" stroke="url(#hull)" strokeWidth="2">
+                    {/* sheer line */}
+                    <path d="M100 270 C 200 210, 480 190, 700 240" />
+                    {/* chine line */}
+                    <path d="M120 320 C 240 270, 520 250, 720 290" />
+                    {/* keel and stem */}
+                    <path d="M140 340 C 300 320, 560 300, 740 300" />
+                    {/* transom hint */}
+                    <path d="M120 320 L110 260" opacity="0.4" />
+                  </g>
+                  {/* layer deposition curves */}
+                  <g stroke="#22d3ee" strokeWidth="1" opacity="0.75">
                     {Array.from({ length: 9 }).map((_, i) => (
-                      <path key={`v-${i}`} d={`M 300 40 C ${160+i*20} 120, ${160+i*20} 240, 300 320`} opacity={(i+6)/22} />
+                      <path key={i} d={`M ${130 - i*6} ${330 - i*4} C ${260 - i*6} ${280 - i*4}, ${540 - i*6} ${260 - i*4}, ${730 - i*6} ${300 - i*4}`} fill="none" />
                     ))}
                   </g>
-                  <g stroke="#f59e0b" strokeWidth="3" opacity="0.9">
-                    <path d="M60 340 Q300 120 540 340" />
-                  </g>
+                  {/* bead at nozzle tip */}
+                  <circle cx="451" cy="260" r="5" fill="#f59e0b" />
                 </svg>
-                <div className="mt-4 text-center text-cyan-100/80 text-sm">Parametric hull lines • Toolpath‑ready geometry</div>
+                <div className="mt-4 text-center text-cyan-100/80 text-sm">Large‑format printing of a hard‑chine speedboat hull plug • Modix‑scale gantry</div>
               </div>
             </motion.div>
           </div>

@@ -37,7 +37,30 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-semibold text-white">What we do</h2>
           <p className="mt-3 text-cyan-100/80">End‑to‑end design and fabrication anchored in Minoan roots.</p>
         </div>
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* section illustration: toolpath + wave */}
+        <div className="mt-10 rounded-2xl border border-cyan-400/10 bg-white/5 p-4">
+          <svg viewBox="0 0 960 160" className="w-full h-auto" aria-hidden>
+            <defs>
+              <linearGradient id="aegean" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#0ea5e9" />
+                <stop offset="60%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#0b3b7a" />
+              </linearGradient>
+            </defs>
+            <rect x="8" y="8" width="944" height="144" rx="16" fill="#06182a" />
+            {/* toolpath curves */}
+            <g fill="none" stroke="url(#aegean)" strokeWidth="1.6" opacity="0.85">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <path key={i} d={`M ${40 + i*10} 120 C ${260 + i*6} ${50 + i*3}, ${560 + i*6} ${60 + i*3}, ${900 - i*10} ${110 - i*2}`} />
+              ))}
+            </g>
+            {/* wave footer */}
+            <path d="M0,140 C120,120 240,160 360,150 C480,140 600,120 720,140 C840,160 920,150 960,140" fill="none" stroke="#22d3ee" strokeWidth="2" opacity="0.6" />
+          </svg>
+        </div>
+
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="rounded-2xl border border-cyan-400/10 bg-white/5 p-6 hover:bg-white/10 transition">
               <Icon className="w-6 h-6 text-cyan-300" />

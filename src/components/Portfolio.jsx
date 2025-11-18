@@ -4,17 +4,17 @@ const projects = [
   {
     title: '6.5m Day Cruiser — Hull Plug',
     badge: 'Plug Printing',
-    image: 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%23360%22><rect width=%22640%22 height=%23360%22 fill=%22%23021629%22/><path d=%22M40 300 Q320 120 600 300%22 stroke=%22%2322d3ee%22 stroke-width=%223%22 fill=%22none%22/></svg>'
+    image: 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%23360%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop offset=%220%%22 stop-color=%22#0ea5e9%22/><stop offset=%22100%%22 stop-color=%22#2563eb%22/></linearGradient></defs><rect width=%22640%22 height=%23360%22 fill=%22%23021629%22/><path d=%22M60 280 C180 220 460 200 600 240%22 stroke=%22url(%23g)%22 stroke-width=%223%22 fill=%22none%22/><path d=%22M80 300 C220 260 500 240 620 280%22 stroke=%22#22d3ee%22 stroke-width=%222%22 fill=%22none%22 opacity=%220.8%22/></svg>'
   },
   {
     title: 'Console & Bench Set',
     badge: 'Custom Parts',
-    image: 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%23360%22><rect width=%22640%22 height=%23360%22 fill=%22%23021629%22/><rect x=%22120%22 y=%22120%22 width=%22240%22 height=%22120%22 rx=%2216%22 stroke=%22%23f59e0b%22 stroke-width=%223%22 fill=%22none%22/></svg>'
+    image: 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%23360%22><rect width=%22640%22 height=%23360%22 fill=%22%23021629%22/><rect x=%22100%22 y=%22110%22 width=%22260%22 height=%22140%22 rx=%2216%22 stroke=%22#f59e0b%22 stroke-width=%223%22 fill=%22none%22/><rect x=%22380%22 y=%22140%22 width=%22160%22 height=%2290%22 rx=%2212%22 stroke=%22#ef4444%22 stroke-width=%222%22 fill=%22none%22 opacity=%220.8%22/></svg>'
   },
   {
     title: '7.2m RIB — Seating System',
     badge: 'Design to Mould',
-    image: 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%23360%22><rect width=%22640%22 height=%23360%22 fill=%22%23021629%22/><circle cx=%22320%22 cy=%22180%22 r=%2280%22 stroke=%22%2367e8f9%22 stroke-width=%223%22 fill=%22none%22/></svg>'
+    image: 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%23360%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop offset=%220%%22 stop-color=%22#67e8f9%22/><stop offset=%22100%%22 stop-color=%22#22d3ee%22/></linearGradient></defs><rect width=%22640%22 height=%23360%22 fill=%22%23021629%22/><ellipse cx=%22320%22 cy=%22180%22 rx=%22180%22 ry=%2280%22 stroke=%22url(%23g)%22 stroke-width=%223%22 fill=%22none%22/><line x1=%22160%22 y1=%22180%22 x2=%22480%22 y2=%22180%22 stroke=%22#22d3ee%22 stroke-width=%221.5%22 opacity=%220.7%22/></svg>'
   }
 ]
 
