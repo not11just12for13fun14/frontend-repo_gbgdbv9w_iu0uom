@@ -1,9 +1,9 @@
 import React from 'react'
-import { Wrench, Waves, Ruler, Cube, Ship } from 'lucide-react'
+import { Wrench, Layers, Ruler, Package, Ship } from 'lucide-react'
 
 const items = [
   {
-    icon: Cube,
+    icon: Package,
     title: 'Large‑format 3D Printing',
     desc: 'Plug production on Modix Big Meter for mould‑ready tooling and hull masters.'
   },
@@ -18,7 +18,7 @@ const items = [
     desc: 'Bespoke parts for yards and private projects with tight tolerance fitment.'
   },
   {
-    icon: Waves,
+    icon: Layers,
     title: 'Surface Finishing Workflow',
     desc: 'From printed plug to polished mould: sealing, surfacing, and prep.'
   },
