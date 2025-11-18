@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrench, Waves, Ruler, Cube, ShipWheel } from 'lucide-react'
+import { Wrench, Waves, Ruler, Cube, Ship } from 'lucide-react'
 
 const items = [
   {
@@ -13,7 +13,7 @@ const items = [
     desc: 'Parametric design for hulls, consoles, benches, and ergonomic seating.'
   },
   {
-    icon: ShipWheel,
+    icon: Ship,
     title: 'Customization & Retrofits',
     desc: 'Bespoke parts for yards and private projects with tight tolerance fitment.'
   },
